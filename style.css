@@ -1,0 +1,187 @@
+/* Reset CSS Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Ganti dengan font yang lebih sesuai */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Warna background halaman */
+    padding: 20px;
+}
+
+.business-card {
+    width: 350px; /* Lebar kartu nama */
+    background-color: #ffffff; /* Background kartu putih */
+    border-radius: 20px; /* Border radius kartu */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    padding: 30px;
+    text-align: center;
+    position: relative; /* Untuk positioning elemen background */
+    overflow: hidden; /* Agar shape tidak keluar dari kartu */
+}
+
+/* Bentuk-bentuk dekoratif di background */
+.card-background-shapes .shape {
+    position: absolute;
+    background-color: #FFD700; /* Warna kuning untuk shape */
+    opacity: 0.8; /* Sedikit transparan */
+    border-radius: 50%; /* Membuatnya jadi lingkaran atau oval */
+}
+
+.card-background-shapes .shape-top-left {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    left: -60px;
+    background: linear-gradient(135deg, #FFD700, #FFA500); /* Gradasi kuning-oranye */
+    border-radius: 75px 0 75px 75px; /* Bentuk seperti di gambar */
+}
+
+.card-background-shapes .shape-bottom-left {
+    width: 120px;
+    height: 200px; /* Lebih panjang untuk efek melengkung */
+    bottom: -80px;
+    left: -50px;
+    background: #FFD700;
+    border-radius: 60px 60px 0 0; /* Bentuk melengkung dari bawah */
+    transform: rotate(-15deg);
+}
+
+.card-background-shapes .shape-top-right {
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    right: -40px;
+    background: #FFD700;
+    border-radius: 0 50px 50px 50px;
+}
+
+/* Titik-titik kecil */
+.card-background-shapes::before,
+.card-background-shapes::after {
+    content: '';
+    position: absolute;
+    width: 8px; /* Ukuran titik */
+    height: 8px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+/* Anda bisa menambahkan lebih banyak titik-titik ini dengan :nth-child atau elemen span tambahan jika perlu */
+.card-background-shapes::before {
+    top: 20px;
+    right: 80px;
+}
+.card-background-shapes::after {
+    bottom: 20px;
+    right: 40px;
+    /* Tambahkan lebih banyak dengan posisi berbeda */
+}
+/* Titik-titik lain bisa ditambahkan sebagai elemen span di dalam .card-background-shapes */
+
+
+.card-content {
+    position: relative; /* Agar konten di atas shapes */
+    z-index: 1;
+}
+
+.profile-picture-container {
+    width: 120px; /* Ukuran container foto profil */
+    height: 120px;
+    border-radius: 50%; /* Membuatnya bulat */
+    margin: 0 auto 20px auto;
+    overflow: hidden; /* Memastikan gambar tidak keluar dari lingkaran */
+    border: 5px solid #ffffff; /* Border putih di sekitar foto */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Bayangan untuk foto */
+    background-color: #003366; /* Warna background placeholder jika gambar belum ada */
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi container tanpa distorsi */
+}
+
+.name {
+    font-size: 1.8em;
+    color: #333333; /* Warna nama lebih gelap */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 1.1em;
+    color: #007BFF; /* Warna biru untuk jabatan */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #555555; /* Warna deskripsi */
+    line-height: 1.5;
+    margin-bottom: 25px;
+    padding: 0 10px; /* Sedikit padding agar tidak terlalu ke pinggir */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak antar ikon */
+}
+
+.social-icon img {
+    width: 28px; /* Ukuran ikon sosial media */
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+/* Jika menggunakan Font Awesome: */
+/*
+.social-icon i {
+    font-size: 24px;
+    color: #007BFF;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover i {
+    transform: scale(1.2);
+    color: #0056b3;
+}
+*/
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Efek hover pada ikon */
+}
+
+/* Contoh tambahan untuk titik-titik jika ingin lebih presisi */
+.dots-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Agar tidak mengganggu interaksi dengan konten */
+}
+
+.dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+/* Posisi contoh titik-titik (sesuaikan dengan gambar) */
+.dot.d1 { top: 15%; right: 15%; }
+.dot.d2 { top: 20%; right: 10%; }
+.dot.d3 { bottom: 10%; left: 10%; }
+.dot.d4 { bottom: 15%; left: 18%; }
+.dot.d5 { bottom: 50%; right: 8%; }
+.dot.d6 { bottom: 60%; right: 12%; }
+/* Tambahkan lebih banyak sesuai kebutuhan */
